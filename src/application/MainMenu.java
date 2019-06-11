@@ -107,6 +107,7 @@ public class MainMenu {
 		Text pFindTXT = new Text("Find Patient");
 		pFindTXT.setFont(overall);
 		patientFind.getChildren().addAll(pFindIMG_VIEW, pFindTXT);
+		patientFind.setOnMouseClicked(FindPatientClick);
 
 		// time Table view link
 		timetable = new HBox();
@@ -136,6 +137,7 @@ public class MainMenu {
 		newPTXT.setFont(overall);
 		newP.getChildren().addAll(newPIMG_VIEW, newPTXT);
 		newP.setOnMouseClicked(newPClicked);
+		newP.setOnMouseClicked(NewPatientClick);
 
 		buttonArea.getChildren().addAll(myPatients, patientFind, timetable, settings, newP);
 
@@ -234,5 +236,38 @@ public class MainMenu {
 				}
 
 			}
+		};
+		// find patients setup mouse click
+		EventHandler<MouseEvent> FindPatientClick = new EventHandler<MouseEvent>() {
+	
+			@Override
+			public void handle(MouseEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getButton() == MouseButton.PRIMARY) {
+					try {
+						stage.close();
+						FindPatients findPatientMenu = new FindPatients(sizeX, sizeY, stage.getX(), stage.getY(), user);
+					} catch (Exception e2) {
+						e2.printStackTrace();
+					}
+				}
+			}
+		};
+	
+		EventHandler<MouseEvent> NewPatientClick = new EventHandler<MouseEvent>() {
+	
+			@Override
+			public void handle(MouseEvent e) {
+				// TODO Auto-generated method stub
+				if(e.getButton() == MouseButton.PRIMARY) {
+					try {
+						stage.close();
+						CreateNewPatient CreatNewPatientMenu = new CreateNewPatient(sizeX, sizeY, stage.getX(), stage.getY(), user);
+					}catch (Exception e2) {
+						e2.printStackTrace();
+					}
+				}
+			}
+			
 		};
 }
