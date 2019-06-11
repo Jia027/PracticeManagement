@@ -13,6 +13,8 @@ public class Database {
 	private ArrayList<Member> members = new ArrayList<Member>();
 	private ArrayList<Equipment> equipmentOwned = new ArrayList<Equipment>();
 	private ArrayList<Treatment> treatmentTemplates = new ArrayList<Treatment>();
+	private ArrayList<Patient> patients = new ArrayList<Patient>();
+
 
 	public ArrayList<Member> getMembers() {
 		return members;
@@ -24,6 +26,10 @@ public class Database {
 
 	public ArrayList<Treatment> getTreatmentTemplates() {
 		return treatmentTemplates;
+	}
+	
+	public ArrayList<Patient> getPatients() {
+		return patients;
 	}
 
 	// Prototype sample database population
