@@ -61,4 +61,8 @@ public class Practitioner extends Member {
 	public ArrayList<Patient> getPatients() {
 		return patients;
 	}
+	
+	public void AddPatients(Patient p){
+		this.patients.add(p);
+	}
 }
