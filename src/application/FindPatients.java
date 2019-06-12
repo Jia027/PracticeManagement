@@ -255,13 +255,13 @@ public class FindPatients {
 			try {
 				patientsList.getItems().clear();
 				if (search.getText().isEmpty()) {
-					for (Patient P : PracticeInterface.database.getPatients()) {
+					for (Patient P : user.getPatients()) {
 						patientsList.getItems().add(P);
 
 					}
 				} else {
-					for (Patient P : PracticeInterface.database.getPatients()) {
-						if (P.getName().toLowerCase().contains(search.getText().toLowerCase())) {
+					for (Patient P : user.getPatients()) {
+						if (P.getName().toLowerCase().contains(search.getText().toString().toLowerCase())) {
 							patientsList.getItems().add(P);
 						}
 
